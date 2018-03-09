@@ -16,7 +16,7 @@ public class Aspecto {
 	public void beforeExecution(JoinPoint joinPoint) {
 
 		System.out.println("beforeExecution() is running!");
-		System.out.println("hijacked : " + joinPoint.getSignature().getName());
+		System.out.println("getName : " + joinPoint.getSignature().getName());
 		System.out.println("******");
 	}
 	
@@ -24,7 +24,7 @@ public class Aspecto {
 	public void afterExecution(JoinPoint joinPoint){
 		
 		System.out.println("afterExecution() is running!");
-		System.out.println("hijacked : " + joinPoint.getSignature().getName());
+		System.out.println("getName : " + joinPoint.getSignature().getName());
 		System.out.println("******");
 	}
 	
@@ -32,7 +32,7 @@ public class Aspecto {
 	public void afterReturnExecution(JoinPoint jp){
 
 		System.out.println("afterReturnExecution() is running!");
-		System.out.println("hijacked : " + jp.getSignature().getName());
+		System.out.println("getName : " + jp.getSignature().getName());
 		System.out.println("******");
 	}
 	
