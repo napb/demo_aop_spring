@@ -24,4 +24,31 @@ public class ServicioImpl implements Servicio{
 				
 		return responseDto;
 	}
+
+	@Override
+	public String orquestador() {
+		String prueba = this.metodoUno() + " / " + this.metodoDos() + " / " + this.metodoTres();
+
+		return prueba;
+	}
+
+
+	@Override
+	public String metodoUno() {
+		return "metodo uno";
+	}
+
+	@Override
+	public String metodoDos() {
+		//throw new RuntimeException("exceoption de metodo dos");
+
+		return "metodo dos";
+	}
+
+	@Override
+	public String metodoTres() {
+
+		throw new RuntimeException("exceoption de metodo dos");
+		//return "metodo tres";
+	}
 }

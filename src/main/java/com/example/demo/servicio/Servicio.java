@@ -5,4 +5,12 @@ import com.example.demo.dto.ResponseDto;
 
 public interface Servicio {
 	ResponseDto getMethod(RequestDto requestDto);
+
+	String orquestador();
+
+	String metodoUno();
+
+	String metodoDos();
+
+	String metodoTres();
 }

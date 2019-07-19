@@ -26,4 +26,10 @@ public class Controlador {
 				
 		return servicio.getMethod(requestDto);
 	}
+
+	@GetMapping("/controladorPrueba")
+	public String controladorPrueba(){
+		return servicio.orquestador();
+	}
+
 }
