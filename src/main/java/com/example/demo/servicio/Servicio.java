@@ -8,9 +8,4 @@ public interface Servicio {
 
 	String orquestador();
 
-	String metodoUno();
-
-	String metodoDos();
-
-	String metodoTres();
 }

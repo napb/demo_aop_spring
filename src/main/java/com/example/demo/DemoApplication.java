@@ -1,6 +1,10 @@
 package com.example.demo;
 
 import com.example.demo.argumentresolver.UsuarioHandlerMethodArgumentResolver;
+import com.example.demo.servicio.Servicio;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +21,13 @@ import java.util.List;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-public class DemoApplication extends WebMvcConfigurerAdapter {
+public class DemoApplication extends WebMvcConfigurerAdapter implements CommandLineRunner {
+
+
+	@Autowired
+	@Qualifier("servicio")
+	private Servicio servicio;
+
 
 	@Override
 	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
@@ -26,5 +36,11 @@ public class DemoApplication extends WebMvcConfigurerAdapter {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
+	}
+
+	@Override
+	public void run(String... strings) throws Exception {
+		servicio.orquestador();
+//		servicio.metodoUno();
 	}
 }

@@ -27,27 +27,20 @@ public class ServicioImpl implements Servicio{
 
 	@Override
 	public String orquestador() {
-		String prueba = this.metodoUno() + " / " + this.metodoDos() + " / " + this.metodoTres();
-
+		String prueba = otroServicio.getSaludo("metodo_uno") + " / " + otroServicio.getSaludo("metodo_dos") + " / " + this.metodoTres();
 		return prueba;
 	}
 
-
-	@Override
-	public String metodoUno() {
+	private String metodoUno() {
 		return "metodo uno";
 	}
 
-	@Override
 	public String metodoDos() {
 		//throw new RuntimeException("exceoption de metodo dos");
-
 		return "metodo dos";
 	}
 
-	@Override
 	public String metodoTres() {
-
 		throw new RuntimeException("exceoption de metodo dos");
 		//return "metodo tres";
 	}

@@ -33,19 +33,19 @@ public class Aspecto {
 		//System.out.println("******");
 	}
 
-	@Around("execution(* com.example.demo.servicio.ServicioImpl.*(*))")
-	//@Around("within()")
+	@Around("within(com.example.demo.servicio..*)")
+	//@Around("execution(* com.example.demo.servicio.ServicioImpl.*(..))")
 	public Object arround(ProceedingJoinPoint proceedingJoinPoint) {
-		System.out.println("Inicio de metodo: " + proceedingJoinPoint.getSignature().getName());
 
+		System.out.println("Inicio de metodo: [" + proceedingJoinPoint.getSignature().getName() + "]");
 		Object o = null;
 
 		try{
 			o = proceedingJoinPoint.proceed();
 			System.out.println(o);
-			System.out.println("Salida OK metodo: " + proceedingJoinPoint.getSignature().getName());
+			System.out.println("Salida OK metodo: [" + proceedingJoinPoint.getSignature().getName() + "]");
 		} catch (Throwable t) {
-			System.out.println("Exception capturada metodo: " + proceedingJoinPoint.getSignature().getName());
+			System.out.println("Exception capturada metodo: [" + proceedingJoinPoint.getSignature().getName() + "]");
 			//throw new RuntimeException("salida exception aspecto");
 		}
 
