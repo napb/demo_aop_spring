@@ -27,7 +27,7 @@ public class ServicioImpl implements Servicio{
 
 	@Override
 	public String orquestador() {
-		String prueba = otroServicio.getSaludo("metodo_uno") + " / " + otroServicio.getSaludo("metodo_dos") + " / " + this.metodoTres();
+		String prueba = otroServicio.getSaludo("metodo_uno") + " / " + otroServicio.getSaludoDos("metodo_dos") + " / " + this.metodoTres();
 		return prueba;
 	}
 
