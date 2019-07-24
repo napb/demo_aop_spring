@@ -1,5 +1,6 @@
 package com.example.demo.servicio;
 
+import com.example.demo.aop.Loggeable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,7 @@ public class ServicioImpl implements Servicio{
 	}
 
 	@Override
+	@Loggeable
 	public String orquestador() {
 		String prueba = otroServicio.getSaludo("metodo_uno") + " / " + otroServicio.getSaludoDos("metodo_dos") + " / " + this.metodoTres();
 		return prueba;
@@ -40,8 +42,9 @@ public class ServicioImpl implements Servicio{
 		return "metodo dos";
 	}
 
+	@Loggeable
 	public String metodoTres() {
-		throw new RuntimeException("exceoption de metodo dos");
-		//return "metodo tres";
+		//throw new RuntimeException("exceoption de metodo dos");
+		return "metodo tres";
 	}
 }
